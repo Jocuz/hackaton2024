@@ -1,0 +1,152 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #21367F; /* Color para texto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    color: #0298CA; /* Color del texto */
+    font-size: 36px; /* Tamaño del texto */
+    position: absolute; /* Posiciona el h1 de forma absoluta */
+    top: 10px; /* Separación del borde superior */
+    left: 10px; /* Separación del borde derecho */
+    margin: 0; /* Elimina márgenes predeterminados */
+    text-align: right; /* Alinea el texto dentro del encabezado hacia la derecha */
+}
+
+
+/* Estilos para los enlaces */
+a {
+    color: #0298CA;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px 0;
+    display: block;
+}
+
+/* Efecto de hover para los enlaces */
+a:hover {
+    color: #21367F;
+    text-decoration: underline;
+}
+
+/* Contenedor para los enlaces */
+div {
+    text-align: center;
+}
+
+
+#login-screen {
+    position: absolute;
+    top: 80%; /* Centra el cuadro verticalmente */
+    right: 20px; /* Pegado al lado derecho de la pantalla */
+    width: 500px;
+    padding: 100px;
+    background-color: rgba(250, 250, 250, 0.6); /* Blanco opaco */
+    transform: translateY(-50%); /* Centra verticalmente */
+}
+
+/* Estilo para la imagen del logo */
+.logo_img {
+    position: absolute;  /* Esto la posiciona en relación al contenedor del body */
+    top: 55%;             /* Centra la imagen verticalmente en la pantalla */
+    left: 50px;              /* Coloca la imagen en el borde izquierdo de la pantalla */
+    transform: translateY(-50%); /* Centra la imagen en el eje vertical */
+    padding-left: 20px;   /* Opcional: Espaciado a la izquierda */
+}
+
+.logo_img img {
+    width: 400px; /* Ajusta este valor según el tamaño que desees */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+.logo_txt {
+    position: absolute; /* Posiciona el elemento de manera absoluta */
+    top: 50px; /* Espacio desde la parte superior de la pantalla */
+    right: 100px; /* Espacio desde la parte derecha de la pantalla */
+    text-align: right; /* Asegura que el contenido dentro del div esté alineado a la derecha */
+}
+
+.logo_txt img {
+    width: 450px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */ 
+}
+
+.registro {
+    font-size: 24px; /* Tamaño del texto */
+    padding: 20px;   /* Espaciado interno alrededor del texto */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+}
+
+.registro a {
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    color: #0298CA;       /* Color del enlace */
+    font-weight: bold;    /* Hacer el texto más grueso */
+}
+
+.registro a:hover {
+    color: #21367F;       /* Color del enlace al pasar el cursor */
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+.correo {
+    text-align: left; /* Alinea el contenido del párrafo a la izquierda */
+    margin-left: 0; /* Asegura que no haya margen desde el lado izquierdo */
+    padding-left: 10px; /* Opcional: agrega un pequeño espacio interno a la izquierda */
+}
+
+.correo input {
+    width: 100%; /* Si quieres que el campo de entrada se extienda completamente dentro de su contenedor */
+    max-width: 300px; /* Controla el ancho máximo del campo de entrada */
+    margin-top: 5px; /* Espacio entre el texto y el campo de entrada */
+    padding: 5px; /* Espaciado interno dentro del campo de entrada */
+    border: 1px solid #ccc; /* Estilo del borde del campo */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Asegura que el padding no exceda el ancho total */
+}
+
+.password {
+    text-align: left; /* Alinea el contenido del párrafo a la izquierda */
+    margin-left: 0; /* Asegura que no haya margen desde el lado izquierdo */
+    padding-left: 10px; /* Opcional: agrega un pequeño espacio interno a la izquierda */
+}
+
+.word input {
+    width: 100%; /* Si quieres que el campo de entrada se extienda completamente dentro de su contenedor */
+    max-width: 300px; /* Controla el ancho máximo del campo de entrada */
+    margin-top: 5px; /* Espacio entre el texto y el campo de entrada */
+    padding: 5px; /* Espaciado interno dentro del campo de entrada */
+    border: 1px solid #ccc; /* Estilo del borde del campo */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Asegura que el padding no exceda el ancho total */
+}
+
+  /* Estilos de navegación */
+  nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Eliminado espacio innecesario */
+}

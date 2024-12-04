@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <link rel="icon" href="." type="image/x-icon">
+    <title>Gotita Viva</title>
+</head>
+<body>
+
+<div class="header">
+    <a href="../index.html">
+        <img src="../assets/logo.png" alt="logo" class="logo">
+    </a>
+</div>
+
+ <!-- Formulario para reestablecer contraseña -->
+ <div class="verificacion">
+    <div class="profile-icon">
+        <img src="../assets/icon_pe.png" alt="icono de perfil">
+    </div>
+    <form id="resetForm" action="" method="POST">
+        <p class="txt_codigo">Código de verificación:</p>
+        <input type="text" id="verificationCode" name="verificationCode" placeholder="Ingrese el código de verificación" required>
+        <p class="txt_codigo">Nueva contraseña:</p>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Ingrese su nueva contraseña" required>
+        <p class="txt_codigo">Repetir nueva contraseña:</p>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repita su nueva contraseña" required>
+        <button type="submit" id="submitButton">Restablecer</button>
+    </form>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h2>¡Contraseña actualizada con éxito!</h2>
+    </div>
+    <div class="modal-footer">
+        <button id="closeModalBtn" class="btn">Cerrar</button>
+    </div>
+    </div>
+</div>
+
+<!-- JavaScript para mostrar el modal después de enviar el formulario -->
+    <script>
+    // Obtener elementos del DOM
+    var modal = document.getElementById("myModal");
+    var form = document.getElementById("resetForm");
+    var submitButton = document.getElementById("submitButton");
+    var closeModalBtn = document.getElementById("closeModalBtn");
+    
+    // Cuando se envía el formulario
+    form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar envío del formulario (para este ejemplo)
+    
+    // Aquí se debería enviar el formulario por AJAX o fetch a tu backend (no implementado aquí)
+    
+    // Mostrar el modal
+    modal.style.display = "block";
+    });
+    
+    // Cuando se hace clic en el botón de cerrar
+    closeModalBtn.addEventListener('click', function() {
+    modal.style.display = "none";
+    window.location.href = 'inicio_sesion.html';
+    });
+    
+    // Cuando se hace clic en cualquier parte fuera del modal, cerrarlo también
+    window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    });
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles_recu.css">
+    <title>Gotita Viva</title>
+</head>
+<body>
+    <a href="../main.html" class="main-button">Regresar</a>
+
+<!-- Formulario de recuperación-->
+    <div id="recuperacion">
+        <h1>RECUPERAR CONTRASEÑA</h1>
+      <form id="resetForm" action="" method="POST">
+        <p class="correo">Correo: <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required></p>
+        <button class="enviar" type="submit" id="submitButton">Enviar</button>
+      </form>
+    </div>
+
+<!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h2>¡Verifique su correo electrónico!</h2>
+        </div>
+        <div class="modal-body">
+            <p>Se ha enviado un correo electrónico con instrucciones para restablecer su contraseña.</p>
+        </div>
+        </div>
+    </div>
+    
+<!-- JavaScript para mostrar el modal después de enviar el formulario -->
+    <script>
+        // Obtener elementos del DOM
+        var modal = document.getElementById("myModal");
+        var form = document.getElementById("resetForm");
+        var submitButton = document.getElementById("submitButton");
+        var closeModalBtn = document.getElementById("closeModalBtn");
+        
+        // Cuando se envía el formulario
+        form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar envío del formulario (para este ejemplo)
+                
+        // Mostrar el modal
+        modal.style.display = "block";
+        });
+        
+        // Cuando se hace clic en el botón de cerrar
+        closeModalBtn.addEventListener('click', function() {
+        modal.style.display = "none";
+        window.location.href = 'cambio_contraseña.html';
+        });
+        
+        // Cuando se hace clic en cualquier parte fuera del modal, cerrarlo también
+        window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        });
+    </script>
+
+</body>
+</html>
