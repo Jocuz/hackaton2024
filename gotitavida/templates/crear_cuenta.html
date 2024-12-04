@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=""">
+    <link rel="icon" href="" type="image/x-icon">
+    <title>Gotita Viva</title>
+</head>
+<body>
+
+<!-- Header que contiene el logo de EcoMarket -->
+<div class="header">
+    <a href="../index.html">
+        <img src="" alt="logo" class="logo">
+    </a>
+</div>
+
+<h1 class="title">¡Crea tu cuenta!</h1>
+
+<!-- Formulario de inicio de sesión -->
+    <div class="login">
+        <div class="profile-icon">
+                <img src="../assets/icon_pe.png" alt="icono de perfil">
+        </div>
+            <form  id="creationForm" action="" method="">
+                <p class="txt_crear_cuenta">Correo:</p>
+                <input type="email" id="email" name="email" placeholder="" required>
+                <p class="txt_crear_cuenta">Contraseña:</p>
+                <input type="password" id="pass" name="pass" placeholder="" required>
+                <div class="form-buttons">
+                    <button type="reset">Limpiar</button>
+
+                </div>
+            </form>
+            <button type="submit" id="submitButton">Crear</button>
+    </div>
+
+     <!-- Modal -->
+     <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>¡Cuenta creada con éxito!</h2>
+            </div>
+            <div class="modal-footer">
+                <button id="closeModalBtn" class="btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para mostrar el modal después de enviar el formulario -->
+    <script>
+        // Obtener elementos del DOM
+        var modal = document.getElementById("myModal");
+        var form = document.getElementById("creationForm");
+        var submitButton = document.getElementById("submitButton");
+        var closeModalBtn = document.getElementById("closeModalBtn");
+        
+        // Cuando se envía el formulario
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar envío del formulario (para este ejemplo)
+            
+            // Mostrar el modal
+            modal.style.display = "block";
+        });
+        
+        // Cuando se hace clic en el botón de cerrar
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+            window.location.href = 'inicio_sesion.html';
+        });
+        
+        // Cuando se hace clic en cualquier parte fuera del modal, cerrarlo también
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+
+    <script type="module" src="../public/scripts/registro.js"></script>
+</body>
+</html>
