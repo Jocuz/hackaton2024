@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio de Sesión</title>
+    <link rel="stylesheet" href="../styles/estilosgral.css"> <!-- Enlace correcto al CSS -->
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="main.html">Ir a Inicio</a></li>
+        </ul>
+    </nav>
+
+    <div id="login-screen">
+        <div class="login-container">
+            <h1>Bienvenidos</h1>
+            <div class="login">
+                <form action="" method="POST">
+                    <p class="correo">
+                        Correo: 
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Ingrese su correo electrónico" 
+                            required
+                        >
+                    </p>
+                    <p class="password">
+                        Contraseña: 
+                        <input 
+                            type="password" 
+                            id="pass" 
+                            name="pass" 
+                            placeholder="Ingrese su contraseña" 
+                            required
+                        >
+                    </p>
+                    <p>
+                        <button type="submit">Iniciar Sesión</button>
+                    </p>
+                </form>
+                <div class="forgot-password">
+                    <a href="recuperacion_contraseña.html">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../public/login.js"></script> <!-- Ruta correcta para el archivo JS -->
+</body>
+</html>

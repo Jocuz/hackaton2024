@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gotita Viva</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100vh;
+            background-image: url('../assets/Iso.png');
+            background-repeat: no-repeat;
+            background-size: 400px;
+            background-position: right bottom;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+
+        .navbar .navbar-brand {
+            font-size: 24px;
+            color: #0056b3;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 30px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: #0056b3;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #0056b3;
+        }
+
+        .navbar .dropdown {
+            position: relative;
+        }
+
+        .navbar .dropdown .dropdown-toggle {
+            color: #0056b3;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            min-width: 180px;
+            padding: 10px 0;
+        }
+
+        .navbar .dropdown-menu li {
+            padding: 8px 20px;
+        }
+
+        .navbar .dropdown-menu li a {
+            color: #0056b3;
+            font-size: 16px;
+            height: 30px;
+            text-decoration: none;
+        }
+
+        .navbar .dropdown-menu li a:hover {
+            background-color: white;
+        }
+
+        .text-box-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 100px;
+        }
+
+        .arrow {
+            cursor: pointer;
+            font-size: 30px;
+            color: #9a9898;
+            user-select: none;
+        }
+
+        .text-box {
+            width: 500px;
+            padding: 50px;
+            background-color: #E8E8E8;
+            color: #333333;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #939090;
+            transition: all 0.3s ease;
+            opacity: 1;
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .text-box.fade-out {
+            animation: fade-out 0.5s ease-in-out;
+        }
+
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .text-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            border-color: #000000;
+            /* Corrección del comentario */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Gotita Viva</a>
+        <ul>
+            <li><a href="inicio_sesion.html">Inicia sesión</a></li>
+            <li><a href="crear_cuenta.html">Regístrate</a></li>
+            <li class="dropdown">
+                <span class="dropdown-toggle">Nosotros</span>
+                <ul class="dropdown-menu">
+                    <li><a href="mision_vision.html">Misión y visión</a></li>
+                </ul>
+            </li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <div class="text-box-container">
+        <div class="arrow" id="left-arrow">&#9664;</div>
+        <div class="text-box" id="text-box">
+            En Gotita Viva puedes gestionar los niveles de pH y contaminación del agua
+        </div>
+        <div class="arrow" id="right-arrow">&#9654;</div>
+    </div>
+
+    <script>
+        const texts = [
+            "En Gotita Viva puedes gestionar los niveles de pH y contaminación del agua",
+            "Descubre cómo preservar el agua para las futuras generaciones",
+            "Aprende a medir la calidad del agua de manera efectiva",
+            "Explora métodos sostenibles para reducir la contaminación hídrica"
+        ];
+
+        let currentIndex = 0;
+
+        const textBox = document.getElementById("text-box");
+        const leftArrow = document.getElementById("left-arrow");
+        const rightArrow = document.getElementById("right-arrow");
+
+        function updateText(index) {
+            textBox.textContent = texts[index];
+        }
+
+        leftArrow.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+            updateText(currentIndex);
+        });
+
+        rightArrow.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % texts.length;
+            updateText(currentIndex);
+        });
+    </script>
+
+</body>
+
+</html>

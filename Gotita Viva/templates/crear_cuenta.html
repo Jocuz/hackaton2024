@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gotita Viva - Registro</title>
+  <link rel="stylesheet" href="../styles/styles_crear.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+          <li><a href="main.html">Ir a Inicio</a></li>
+        </ul>
+      </nav>
+  <main>
+    <section class="container">
+      <div class="form-container">
+        <h3>REGÍSTRATE</h3>
+        <!-- Agrega el ID al formulario -->
+        <form id="registerForm">
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Contraseña" required>
+          <button type="submit">Siguiente</button>
+        </form>
+        <!-- Mensajes para éxito y error -->
+        <p id="success-message" style="display:none; color: green;">¡Registro exitoso!</p>
+        <p id="error-message" style="display:none; color: red;">Hubo un error.</p>
+      </div>
+    </section>
+  </main>
+  <!-- Scripts de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="../public/registro.js"></script>
+</body>
+</html>

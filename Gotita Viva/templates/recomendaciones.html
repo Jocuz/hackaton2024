@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-image: url('../assets/recomendaciones.jpg');
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 100% 100%;
+
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            background-color: white;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            margin: 0 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .open-modal {
+            display: inline-block;
+            padding: 10px 20px;
+            color: black;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .open-modal:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            margin: 0 0 15px;
+        }
+
+        .modal-content p {
+            margin: 10px 0;
+            color: #000;
+        }
+
+        .close-modal {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #dc3545;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .close-modal:hover {
+            background-color: #a71d2a;
+        }
+
+        .cabin {
+            font-family: "Cabin", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
+
+        .michroma-regular {
+            font-family: "Michroma", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .contenedorbotones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .marco {
+            background-color: white;
+            border: 2px solid #007acc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: black;
+            font-family: "Cabin", sans-serif;
+        }
+
+        .marco:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historial.html">Historial</a></li>
+            <li><a href="recomendaciones.html">Recomendaciones</a></li>
+            <li><a href="contacto_2.html">Contáctenos</a></li>
+      <li><a href="main.html">Cerrar sesión</a></li>
+
+        </ul>
+    </nav>
+    <div class="contenedorbotones">
+        <a href="#miModal1" class="marco">Usar vinagre o bicarbonato de sodio para ajustar el pH.</a>
+        <a href="#miModal2" class="marco">Uso de clarificadores caseros para turbidez.</a>
+        <a href="#miModal3" class="marco">Uso de filtros caseros con materiales accesibles.</a>
+        <a href="#miModal4" class="marco">Uso de pastillas de cloro o cloro en polvo.</a>
+        <a href="#miModal5" class="marco">Tratamiento básico: trate superficies expuestas a la luz solar.</a>
+    </div>
+
+    <!-- Modal -->
+    <div id="miModal1" class="modal">
+        <div class="modal-content">
+            <h2 class="michroma-regular">Usar vinagre o bicarbonato de sodio para ajustar el pH.</h2>
+            <p class="cabin">Si la acidez del agua está desequilibrada (demasiado alta o baja), se recomienda usar
+                vinagre (para bajar la acidez) o bicarbonato de sodio (para subirla).
+            </p>
+            <h3 class="michroma-regular">Cómo hacerlo.
+                <p class="cabin">Agrega un poco de vinagre blanco al agua y sigue revisando el nivel de pH hasta que se
+                    mantenga
+                    igual.</p>
+                <p class="cabin">Haz agua y mezcla un poco de bicarbonato de sodio, verifica el nivel de suavidad del
+                    líquido hasta
+                    que esté en su punto.</p>
+                <p class="cabin">Observacion: Estos productos son baratos, fáciles de trabajar y pueden mantener el
+                    equilibrio del pH
+                    mientras buscan una respuesta más clara.</p>
+            </h3>
+            <a href="#" class="close-modal">Cerrar</a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="miModal2" class="modal">
+        <div class="modal-content">
+            <h2 class="michroma-regular">Uso de clarificadores caseros para turbidez.</h2>
+            <p class="cabin"> Los clarificadores caseros pueden ayudar a reducir la turbidez del agua.
+
+            </p>
+            <h3 class="michroma-regular">Cómo hacerlo.
+                <p class="cabin">Se recomienda disolver la maicena en agua para favorecer la aglomeración de los
+                    fragmentos de nube, que se depositan en la base del recipiente.
+                </p>
+                <p class="cabin">Quizás quieras intentar usar tierra de diatomeas, que es un polvo blanco natural, en
+                    pequeñas cantidades para ayudar a aclarar el agua.
+                </p>
+                <p class="cabin">Observacion: Estos métodos son asequibles y ofrecen claridad al agua a corto plazo,
+                    mejorando su calidad visual hasta que se pueda implementar una configuración de filtración
+                    eficiente.
+                </p>
+            </h3>
+            <a href="#" class="close-modal">Cerrar</a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="miModal3" class="modal">
+        <div class="modal-content">
+            <h2 class="michroma-regular">Uso de filtros caseros con materiales accesibles.</h2>
+            <p class="cabin">Haga filtros temporales en casa usando cosas simples como arena, carbón especial (si puede
+                encontrar alguno) y un paño común o café para colar.
+            </p>
+            <h3 class="michroma-regular">Cómo hacerlo.
+                <p class="cabin">Construya una pila de sedimentación-coagulación-filtración utilizando sustancias
+                    comunes: granos finamente molidos, carbón activado y telas textiles (como medias o servilletas) para
+                    purificar el agua y disminuir la turbidez.
+                </p>
+                <p class="cabin">Los filtros de carbón activado eliminan compuestos orgánicos y ayudan con problemas a
+                    corto plazo.
+                </p>
+                <p class="cabin">Observacion: Aunque no es un remedio integral, este purificador artesanal puede ayudar
+                    a mejorar la pureza del agua hasta que pueda permitirse una unidad de filtración confiable.
+                </p>
+            </h3>
+            <a href="#" class="close-modal">Cerrar</a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="miModal4" class="modal">
+        <div class="modal-content">
+            <h2 class="michroma-regular">Uso de pastillas de cloro o cloro en polvo.
+            </h2>
+            <p class="cabin">Si garantizar el saneamiento es la prioridad, recurrir a discos o gránulos de cloro puede
+                ofrecer un método rentable e impactante para purificar el agua.
+
+            </p>
+            <h3 class="michroma-regular">Cómo hacerlo.
+                <p class="cabin">Siga las instrucciones del producto para utilizar tabletas de cloro de forma segura
+                    para limpiar el agua de piscinas, tanques o jardines.
+                </p>
+
+                <p class="cabin">Observacion: El cloro sirve como un remedio asequible para erradicar los microbios,
+                    proporcionando una desinfección provisional hasta que se pueda establecer una infraestructura de
+                    descontaminación superior.
+                </p>
+            </h3>
+            <a href="#" class="close-modal">Cerrar</a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="miModal5" class="modal">
+        <div class="modal-content">
+            <h2 class="michroma-regular">Trate las superficies expuestas a la luz solar para detectar la radiación UV
+                (solar).
+            </h2>
+            <p class="cabin">Utilice la luz solar para purificar el agua brevemente, especialmente para beber.
+
+            </p>
+            <h3 class="michroma-regular">Cómo hacerlo.
+                <p class="cabin">Deje recipientes de plástico transparente llenos de agua bajo el sol durante al menos 6
+                    horas. El calor y la radiación ultravioleta del sol ayudan a eliminar los patógenos.
+                </p>
+                <p class="cabin"> Este método es más eficaz en agua clara, por lo que no eliminará la turbiedad, pero
+                    puede disminuir algunos patógenos peligrosos.
+                </p>
+                <p class="cabin">Observacion: Es una solución económica específicamente en áreas soleadas y puede
+                    mejorar otros métodos de desinfección.</p>
+            </h3>
+            <a href="#" class="close-modal">Cerrar</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
